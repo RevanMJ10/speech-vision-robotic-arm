@@ -181,20 +181,7 @@ An analytic solver is deterministic, fast (no GPU needed), and interpretable. It
 **Why Qwen2 1.5B over a keyword parser?**
 Keyword parsers fail on synonyms, descriptions, and spatial qualifiers (*"the pen on the right"*, *"the deformed ball"*). Qwen2 1.5B handles these zero-shot, returning structured JSON that maps cleanly to the vision pipeline without any rule engineering.
 
----
 
-## Serial Command Protocol
-
-Commands sent from Jetson to Arduino over USB at 115200 baud:
-
-| Command | Format | Example | Response |
-|---------|--------|---------|----------|
-| Move arm | `d <base> <shoulder> <elbow>` | `d 90 45 30` | `ok` |
-| Move gripper | `g <angle>` | `g 60` | `ok` |
-| Query PWM state | `?` | `?` | `pwm b s e g` |
-| TOF depth request | `s` (sent to TOF Arduino) | `s` | distance in mm |
-
----
 
 ## Tech Stack
 
