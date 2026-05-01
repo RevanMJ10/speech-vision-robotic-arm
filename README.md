@@ -166,48 +166,6 @@ YOLO11s-seg achieved stable high-frame-rate inference on the Jetson Orin Nano's 
 
 ![Object Detection](images/object_detection.jpg)
 
----
-
-## Repository Structure
-
-```
-speech-vision-robotic-arm/
-├── jetson/
-│   ├── audio/
-│   │   ├── master.cpp              # Main control loop — keypress handler
-│   │   ├── rec_till_r.cpp          # Audio recording (arecord, WAV)
-│   │   ├── play_rec.cpp            # Playback utility
-│   │   ├── whisper_call.cpp        # whisper.cpp STT wrapper
-│   │   └── whisper_call_log.cpp    # STT with timestamped transcript logging
-│   ├── nlu/
-│   │   ├── whisp_embed_nu.cpp      # Qwen2 + whisper embedded pipeline
-│   │   └── intent_client.cpp       # Intent extraction via local LLM server
-│   └── vision/
-│       └── yolo_detection.py       # YOLO11s-seg object detection + tracking
-│
-├── planning/
-│   ├── fk_ik_mat.py                # Custom FK/IK solver with joint limits
-│   └── test_angle_control.py       # Angle → serial command test utility
-│
-├── arduino/
-│   ├── servo_control.ino           # PCA9685 servo driver + serial command parser
-│   └── tof_sensor.ino              # VL53L1X TOF sensor (demand-driven)
-│
-├── images/
-│   ├── arm_top_view.jpg
-│   ├── arm_side_view.jpg
-│   ├── architecture.png
-│   ├── intent_extraction.jpg
-│   ├── object_detection.jpg
-│   └── speech-to-text.jpg
-│
-├── report.pdf                      # Full B.Tech project report (VIT Chennai, 2026)
-└── README.md
-```
-
-> **Note:** Source code is currently being consolidated from multiple development machines and will be uploaded shortly. Full implementation details, including all module code, are documented in [`report.pdf`](report.pdf).
-
----
 
 ## Key Design Decisions
 
